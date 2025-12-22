@@ -144,9 +144,9 @@ const About = () => {
           >
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-50 rounded-full z-0" />
             <img 
-              src="/pic/to.png" 
+              src="/pic/48af34ca-e784-4f4f-9ff6-d96ba89e13b7 (1).jpg" 
               alt="Travel Planning" 
-              className="relative z-10 rounded-[3rem] shadow-2xl border-[10px] border-white w-full object-cover h-[450px]"
+              className="relative z-10 rounded-[3rem] shadow-2xl border-[10px] border-white w-full object-cover h-[350px]"
             />
           </motion.div>
           
