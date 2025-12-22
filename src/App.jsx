@@ -146,7 +146,7 @@ const About = () => {
             <img 
               src="/pic/48af34ca-e784-4f4f-9ff6-d96ba89e13b7 (1).jpg" 
               alt="Travel Planning" 
-              className="relative z-10 rounded-[3rem] shadow-2xl border-[10px] border-white w-full object-cover h-[350px]"
+              className="relative z-10 rounded-[3rem] shadow-2xl border-[10px] border-white w-400px h-[350px]"
             />
           </motion.div>
           
