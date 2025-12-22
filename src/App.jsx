@@ -144,7 +144,7 @@ const About = () => {
           >
             <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-50 rounded-full z-0" />
             <img 
-              src="/public/pic/to.png" 
+              src="/pic/to.png" 
               alt="Travel Planning" 
               className="relative z-10 rounded-[3rem] shadow-2xl border-[10px] border-white w-full object-cover h-[450px]"
             />

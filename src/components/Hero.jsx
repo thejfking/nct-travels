@@ -72,7 +72,7 @@ Your gateway to the world. Fast, reliable, and seamless visa processing at your 
             className="relative z-10"
           >
             <img 
-              src="/public/pic/c462ae4cd8f22bf1af672bf5ea39ab26.jpg" 
+              src="/pic/c462ae4cd8f22bf1af672bf5ea39ab26.jpg" 
               alt="Airplane Flying" 
               className="rounded-[3rem] shadow-2xl border-4 border-white/10 w-full object-cover h-[400px] md:h-[550px]"
             />
