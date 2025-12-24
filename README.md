@@ -32,4 +32,4 @@ The site uses a direct-to-WhatsApp protocol.
 - **Primary Email**: [nctcorporate@gmail.com]
 
 ---
-*Created by [Your Olawoore Joshua] for NCT Travels.*
+*Created by [Olawoore Joshua] for NCT Travels.*
