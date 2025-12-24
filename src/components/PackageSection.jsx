@@ -30,18 +30,21 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
     if (name.includes("tanzania")) return "tz";
     if (name.includes("uae")) return "ae";
     if (name.includes("china")) return "cn";
+    if (name.includes("europe") || name.includes("schengen")) return "eu";
     return null;
   };
 
   const handleWhatsAppPayment = () => {
+    // Logic to handle both number prices and string prices (like Euro)
+    const displayPrice = typeof price === 'number' ? `₦${price.toLocaleString()}` : price;
+    
     const message = `Hello NCT Travels! 👋%0A%0A` +
                     `I am interested in the *${type}* package.%0A` +
-                    `*Price:* ₦${price.toLocaleString()}%0A%0A` +
-                    `Please send your Account details so I can proceed with the payment for my visa application.`;
+                    `*Price:* ${displayPrice}%0A%0A` +
+                    `Please send your Account details so I can proceed with the application.`;
     window.open(`https://wa.me/${businessNumber}?text=${message}`, '_blank');
   };
 
-  // --- NEW ENQUIRY FUNCTION ---
   const handleWhatsAppEnquiry = () => {
     const message = `Hello NCT Travels, I would like to get more information regarding the *${type}* package listed on your website.`;
     window.open(`https://wa.me/${businessNumber}?text=${encodeURIComponent(message)}`, '_blank');
@@ -65,7 +68,7 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
         <div className="absolute bottom-4 left-4 flex items-center gap-2 pr-4">
           {flagCode && (
             <img 
-              src={`https://flagcdn.com/w40/${flagCode}.png`} 
+              src={flagCode === 'eu' ? "https://flagcdn.com/w40/eu.png" : `https://flagcdn.com/w40/${flagCode}.png`} 
               alt="flag" 
               className="w-6 h-auto rounded-sm shadow-sm border border-white/20"
             />
@@ -111,8 +114,10 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
         <div className="mt-auto pt-4 border-t border-slate-50">
           <div className="flex justify-between items-end mb-4">
             <div className="flex flex-col">
-              <span className="text-[10px] text-gray-400 font-bold uppercase">Payable</span>
-              <span className="text-2xl font-black text-slate-900 leading-none">₦{price.toLocaleString()}</span>
+              <span className="text-[10px] text-gray-400 font-bold uppercase">Total Package</span>
+              <span className="text-2xl font-black text-slate-900 leading-none">
+                {typeof price === 'number' ? `₦${price.toLocaleString()}` : price}
+              </span>
             </div>
           </div>
           
@@ -123,7 +128,6 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
             Pay & Apply <CreditCard size={18} />
           </button>
 
-          {/* --- NEW WHATSAPP ENQUIRY LINK --- */}
           <button 
             onClick={handleWhatsAppEnquiry}
             className="w-full text-slate-400 hover:text-green-500 text-[11px] font-bold uppercase tracking-widest flex items-center justify-center gap-2 transition-colors py-1"
@@ -140,11 +144,26 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
 export const PackageSection = () => {
   const visas = [
     { 
+      type: "Europe Standard (Schengen)", 
+      price: "€3,700", 
+      image: "/pic/b29e01bf-401f-4c1b-9b79-c35b824adf5e.jpg",
+      details: [
+        "Netherlands, Norway, Romania, Italy, Germany Luxembourg, Ireland.) ",
+        "Step 1: Registration (€500)",
+        "Step 2: Job Offer/Contract (€1000)",
+        "Step 3: Work Permit Issuance & processing: €1200",
+        "step 4: Documentation Delivery & Embassy Booking: Included in processing (no separate fee).",
+        "Final Step: After Visa Approval (€1000)"
+      ],
+      requirements: ["Passport Datapage", "Updated CV", "Academic Certs"],
+      footerInfo: ["Multi-Stage Processing", "Installments Allowed"]
+    },
+    { 
       type: "South Africa E.Visa", 
       price: 1500000, 
       image: "pic/south.jpeg",
       details: ["90 Days Visa", "90 Days Validity"],
-      requirements: ["Datapage", "Passport photo", "Yellow Fever card (In and out Copy)"],
+      requirements: ["Datapage", "Passport photo", "Yellow Fever card"],
       footerInfo: ["Approval in 5-7 Days"]
     },
     { 
@@ -175,25 +194,9 @@ export const PackageSection = () => {
       type: "Qatar 5-Star (Sharing)", 
       price: 915000, 
       image: "pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
-      details: ["3 Nights Accommodation in a 5 Star Hotel", "Daily Buffet Breakfast", "Return Airport Transfers"],
+      details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
       requirements: ["Datapage", "Passport photo", "2 in a room"],
       footerInfo: ["Full Package"]
-    },
-    { 
-      type: "Qatar 5-Star (Shaza)", 
-      price: 1200000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
-      details: ["3 Nights Shaza Hotel ,Daily Buffet Breakfast", "Return Airport Transfers"],
-      requirements: ["Datapage", "Passport photo", "2 in a room"],
-      footerInfo: ["Premium Deal"]
-    },
-    { 
-      type: "Qatar 5-Star (Single)", 
-      price: 1460000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
-      details: ["3 Nights 5-Star Hotel, Buffet Breakfast, Transfers"],
-      requirements: ["Datapage", "Passport photo", "1 in a room"],
-      footerInfo: ["Solo Traveler"]
     },
     { 
       type: "Indonesia E-Visa", 
@@ -236,18 +239,10 @@ export const PackageSection = () => {
       footerInfo: ["7-10 days Approval"]
     },
     { 
-      type: "Morocco E.VISA (Standard)", 
-      price: 300000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.31 PM.jpeg",
-      details: ["30 days Visa", "Valid US/UK/Schengen Copy Required"],
-      requirements: ["Datapage", "Passport photo"],
-      footerInfo: ["7-10 days Approval"]
-    },
-    { 
       type: "UAE E-Visa", 
       price: 350000, 
       image: "pic/WhatsApp Image 2025-12-18 at 11.49.32 PM.jpeg",
-      details: ["30 days Visa", "All Nationalities Except Nigeria"],
+      details: ["30 days Visa", "Non-Nigerians"],
       requirements: ["Datapage", "Passport"],
       footerInfo: ["5-7 Business Days"]
     },
@@ -256,7 +251,7 @@ export const PackageSection = () => {
       price: 250000, 
       image: "pic/WhatsApp Image 2025-12-18 at 11.49.33 PM.jpeg",
       details: ["April 2026 Submission", "N400k balance on approval"],
-      requirements: ["Datapage", "Passport photo", "Non-Refundable Fee: N250k"],
+      requirements: ["Datapage", "Passport photo"],
       footerInfo: ["30 Days Business Visa"]
     }
   ];
