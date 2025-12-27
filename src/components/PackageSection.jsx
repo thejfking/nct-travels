@@ -36,14 +36,19 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
   };
 
   const handleWhatsAppPayment = () => {
+    // CLEAN PRICE FOR META PIXEL: Remove symbols/commas to send a clean number
+    const numericPrice = typeof price === 'number' 
+      ? price 
+      : Number(price.replace(/[^0-9.-]+/g, ""));
+
     const displayPrice = typeof price === 'number' ? `₦${price.toLocaleString()}` : price;
     
-    // FACEBOOK PIXEL TRACKING: Track as a Lead when they click pay
+    // FACEBOOK PIXEL TRACKING: Pass the specific value of the package
     ReactPixel.track('Lead', {
       content_name: type,
       content_category: 'Visa Application',
-      value: typeof price === 'number' ? price : 0,
-      currency: typeof price === 'number' ? 'NGN' : 'EUR'
+      value: numericPrice || 0,
+      currency: 'NGN'
     });
 
     const message = `Hello NCT Travels! 👋%0A%0A` +
@@ -54,10 +59,10 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
   };
 
   const handleWhatsAppEnquiry = () => {
-    // FACEBOOK PIXEL TRACKING: Track as an Inquiry
+    // FACEBOOK PIXEL TRACKING: Track as a general Contact inquiry
     ReactPixel.track('Contact', {
       content_name: type,
-      method: 'WhatsApp'
+      method: 'WhatsApp Inquiry'
     });
 
     const message = `Hello NCT Travels, I would like to get more information regarding the *${type}* package listed on your website.`;
