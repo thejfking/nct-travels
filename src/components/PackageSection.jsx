@@ -17,33 +17,32 @@ const cardVariants = {
 };
 
 const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => {
-  const businessNumber = "2347018424893";
+  const businessNumber = "2347082324584";
 
   const getFlagCode = (typeName) => {
     const name = typeName.toLowerCase();
     if (name.includes("south africa")) return "za";
     if (name.includes("oman")) return "om";
-    if (name.includes("morocco")) return "ma";
     if (name.includes("qatar")) return "qa";
     if (name.includes("indonesia")) return "id";
-    if (name.includes("uganda")) return "ug";
+    if (name.includes("uganda") || name.includes("east africa")) return "ug";
     if (name.includes("kenya")) return "ke";
     if (name.includes("tanzania")) return "tz";
     if (name.includes("uae")) return "ae";
     if (name.includes("china")) return "cn";
+    if (name.includes("portugal")) return "pt";
+    if (name.includes("azerbaijan")) return "az";
     if (name.includes("europe") || name.includes("schengen")) return "eu";
     return null;
   };
 
   const handleWhatsAppPayment = () => {
-    // CLEAN PRICE FOR META PIXEL: Remove symbols/commas to send a clean number
     const numericPrice = typeof price === 'number' 
       ? price 
       : Number(price.replace(/[^0-9.-]+/g, ""));
 
     const displayPrice = typeof price === 'number' ? `₦${price.toLocaleString()}` : price;
     
-    // FACEBOOK PIXEL TRACKING: Pass the specific value of the package
     ReactPixel.track('Lead', {
       content_name: type,
       content_category: 'Visa Application',
@@ -59,7 +58,6 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
   };
 
   const handleWhatsAppEnquiry = () => {
-    // FACEBOOK PIXEL TRACKING: Track as a general Contact inquiry
     ReactPixel.track('Contact', {
       content_name: type,
       method: 'WhatsApp Inquiry'
@@ -164,31 +162,47 @@ export const PackageSection = () => {
     { 
       type: "South Africa E.Visa", 
       price: 1500000, 
-      image: "pic/south.jpeg",
+      image: "/pic/n3.jpeg",
       details: ["90 Days Visa", "90 Days Validity"],
       requirements: ["Datapage", "Passport photo", "Yellow Fever card"],
       footerInfo: ["Approval in 5-7 Days"]
     },
     { 
       type: "Oman 2yrs Freelance", 
-      price: 3000000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.23 PM.jpeg",
+      price: 3500000, // UPDATED PRICE
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.23 PM.jpeg",
       details: ["Visa Only", "Male Only", "ID + Medicals (N280k)"],
       requirements: ["Datapage", "Passport photo", "OK to Board (N20k)"],
       footerInfo: ["24hrs-7 Days Processing"]
     },
     { 
-      type: "Morocco AFCON Deal", 
-      price: 250000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.22 PM (1).jpeg",
-      details: ["Morocco E-Visa", "FAN ID included"],
-      requirements: ["Passport Photo", "Hard copy Passport to Lagos"],
-      footerInfo: ["Approved in 24hrs"]
+      type: "Azerbaijan 🇦🇿 Sticker Visa",
+      price: 1500000,
+      image: "/pic/n1.jpeg",
+      details: ["Issued in Doha", "30 Days Visa", "Approval in 25 Days"],
+      requirements: ["Passport Hardcopy", "Passport photograph", "Sent to our Lagos office"],
+      footerInfo: ["Sticker Visa"]
+    },
+    { 
+      type: "Portugal Residence Permit",
+      price: 12950000,
+      image: "/pic/n2.jpeg",
+      details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      requirements: ["Passport", "Police Clearance", "2 Photos"],
+      footerInfo: ["Total: €7,000"]
+    },
+    { 
+      type: "East Africa E-Visa", 
+      price: 450000, 
+      image: "/pic/n3.jpeg",
+      details: ["90 Days Single Entry", "Covers Uganda, Kenya, Rwanda", "Approval in 7-14 Days"],
+      requirements: ["Datapage", "Passport photo", "Entry via Uganda"],
+      footerInfo: ["3-Country Coverage"]
     },
     { 
       type: "Qatar 30days E-Visa", 
-      price: 750000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.24 PM.jpeg",
+      price: 950000, // UPDATED PRICE
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.24 PM.jpeg",
       details: ["VISA ONLY"],
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["Standard Package"]
@@ -196,7 +210,7 @@ export const PackageSection = () => {
     { 
       type: "Qatar 5-Star (Sharing)", 
       price: 915000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
       details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
       requirements: ["Datapage", "Passport photo", "2 in a room"],
       footerInfo: ["Full Package"]
@@ -204,15 +218,15 @@ export const PackageSection = () => {
     { 
       type: "Indonesia E-Visa", 
       price: 1680000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.26 PM.jpeg",
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.26 PM.jpeg",
       details: ["60days Visa"],
       requirements: ["Datapage", "Passport photo", "Hotel/Flight Reservation"],
       footerInfo: ["14 - 21 days Approval"]
     },
     { 
       type: "Uganda E-Visa", 
-      price: 230000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.26 PM (1).jpeg",
+      price: 250000, // UPDATED PRICE
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.26 PM (1).jpeg",
       details: ["90 days Visa"],
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["5-7 Business days"]
@@ -220,31 +234,31 @@ export const PackageSection = () => {
     { 
       type: "Kenya ETA", 
       price: 200000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.28 PM.jpeg",
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.28 PM.jpeg",
       details: ["90 days Visa"],
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["96 hours Approval"]
     },
     { 
       type: "Tanzania Visa Application", 
-      price: 330000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.29 PM.jpeg",
+      price: 430000, // UPDATED PRICE
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.29 PM.jpeg",
       details: ["Standard Processing"],
       requirements: ["Data page", "Passport photo"],
       footerInfo: ["10/14 days processing"]
     },
     { 
       type: "Qatar Residence + QID", 
-      price: 5500000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.30 PM.jpeg",
+      price: 6000000, // UPDATED PRICE
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.30 PM.jpeg",
       details: ["2yr Residence/Work Visa", "Includes Medical + QID"],
       requirements: ["Datapage", "Passport photo"],
-      footerInfo: ["7-10 days Approval"]
+      footerInfo: ["30-45 days Approval"]
     },
     { 
       type: "UAE E-Visa", 
       price: 350000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.32 PM.jpeg",
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.32 PM.jpeg",
       details: ["30 days Visa", "Non-Nigerians"],
       requirements: ["Datapage", "Passport"],
       footerInfo: ["5-7 Business Days"]
@@ -252,7 +266,7 @@ export const PackageSection = () => {
     { 
       type: "CHINA Canton Fair 2026", 
       price: 250000, 
-      image: "pic/WhatsApp Image 2025-12-18 at 11.49.33 PM.jpeg",
+      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.33 PM.jpeg",
       details: ["April 2026 Submission", "N400k balance on approval"],
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["30 Days Business Visa"]
@@ -266,11 +280,10 @@ export const PackageSection = () => {
         "Step 1: Registration (€500)",
         "Step 2: Job Offer/Contract (€1000)",
         "Step 3: Work Permit (€1200)",
-        "Step 4: Booking & Delivery (Included)",
-        "Final Step: After Visa Approval (€1000)"
+        "Step 4: After Visa Approval (€1000)"
       ],
       requirements: ["Passport Datapage", "Updated CV", "Academic Certs"],
-      footerInfo: ["Multi-Stage Processing", "Installments Allowed"]
+      footerInfo: ["Multi-Stage Processing"]
     }
   ];
 

@@ -19,7 +19,9 @@ const ScrollToTop = () => {
 
 // --- FLOATING WHATSAPP ---
 const FloatingWhatsApp = () => {
-  const businessNumber = "2347018424893";
+  // UPDATED TO NEW BUSINESS NUMBER
+  const businessNumber = "2347082324584"; 
+  
   return (
     <motion.a
       href={`https://wa.me/${businessNumber}`}
@@ -164,7 +166,7 @@ function App() {
     // Initializing with your specific Pixel ID
     const options = { 
         autoConfig: false, 
-        debug: true // Set to true to see logs in browser console
+        debug: true 
     };
     ReactPixel.init('475990075353935', options); 
     ReactPixel.pageView();
@@ -194,7 +196,7 @@ function App() {
       <footer className="bg-slate-900 text-white py-16 px-6 relative z-10">
         <div className="max-w-6xl mx-auto flex flex-col items-center text-center">
           <h3 className="text-3xl font-black mb-4 tracking-tight italic text-blue-500">NCT Travels</h3>
-          <p>© 2025 NCT Travels. All rights reserved.</p>
+          <p>© 2026 NCT Travels. All rights reserved.</p>
         </div>
       </footer>
       <FloatingWhatsApp />

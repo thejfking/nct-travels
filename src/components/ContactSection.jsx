@@ -10,7 +10,8 @@ export const ContactSection = () => {
     message: ''
   });
 
-  const businessNumber = "2347018424893";
+  // UPDATED BUSINESS NUMBER
+  const businessNumber = "2347082324584";
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -84,7 +85,8 @@ export const ContactSection = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-tighter">Instant Response</p>
-                  <p className="text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors">+234 701 842 4893</p>
+                  {/* UPDATED DISPLAY NUMBER */}
+                  <p className="text-lg font-black text-slate-900 group-hover:text-blue-600 transition-colors">+234 708 232 4584</p>
                 </div>
               </div>
               
