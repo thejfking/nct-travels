@@ -162,7 +162,7 @@ export const PackageSection = () => {
     { 
       type: "South Africa E.Visa", 
       price: 1500000, 
-      image: "/pic/n3.jpeg",
+      image: "/pic/south.jpeg",
       details: ["90 Days Visa", "90 Days Validity"],
       requirements: ["Datapage", "Passport photo", "Yellow Fever card"],
       footerInfo: ["Approval in 5-7 Days"]
