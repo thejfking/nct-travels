@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle, AlertCircle, Clock, CreditCard, MessageCircle } from 'lucide-react';
 import ReactPixel from 'react-facebook-pixel';
+import { h1, i, p } from 'framer-motion/client';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,7 +17,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
 };
 
-const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => {
+const VisaCard = ({ type, price, details, foot, requirements, footerInfo, image }) => {
   const businessNumber = "2347082324584";
 
   const getFlagCode = (typeName) => {
@@ -32,6 +33,8 @@ const VisaCard = ({ type, price, details, requirements, footerInfo, image }) => 
     if (name.includes("china")) return "cn";
     if (name.includes("portugal")) return "pt";
     if (name.includes("azerbaijan")) return "az";
+    if (name.includes("spain")) return "es";
+    if (name.includes("canada")) return "ca";
     if (name.includes("europe") || name.includes("schengen")) return "eu";
     return null;
   };
@@ -184,9 +187,17 @@ export const PackageSection = () => {
       footerInfo: ["Sticker Visa"]
     },
     { 
-      type: "Portugal Residence Permit",
+      type: "Portugal Residence",
       price: 12950000,
       image: "/pic/n2.jpeg",
+      details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      requirements: ["Passport", "Police Clearance", "2 Photos"],
+      footerInfo: ["Total: €7,000"]
+    },
+    { 
+      type: "Spain Residence",
+      price: 12950000,
+      image: "/pic/spain.webp",
       details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
       requirements: ["Passport", "Police Clearance", "2 Photos"],
       footerInfo: ["Total: €7,000"]
@@ -202,17 +213,33 @@ export const PackageSection = () => {
     { 
       type: "Qatar 30days E-Visa", 
       price: 950000, // UPDATED PRICE
-      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.24 PM.jpeg",
+      image: "/pic/qatar.jpeg",
       details: ["VISA ONLY"],
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["Standard Package"]
     },
     { 
-      type: "Qatar 5-Star (Sharing)", 
-      price: 915000, 
-      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.25 PM.jpeg",
+      type: "Qatar/Doha Holiday Package 1", 
+      price: 1250000, 
+      image: "/pic/qatar.jpeg",
       details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
       requirements: ["Datapage", "Passport photo", "2 in a room"],
+      footerInfo: ["Full Package"]
+    },
+     { 
+      type: "Qatar/Doha Holiday Package 2", 
+      price: 1500000, 
+      image: "/pic/qatar.jpeg",
+      details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
+      requirements: ["Datapage", "Passport photo", "1 in a room"],
+      footerInfo: ["Full Package"]
+    },
+    { 
+      type: "Qatar/Doha Holiday Package 3", 
+      price: 1760000, 
+      image: "/pic/qatar.jpeg",
+      details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
+      requirements: ["Datapage", "Passport photo", "1 in a room"],
       footerInfo: ["Full Package"]
     },
     { 
@@ -248,7 +275,7 @@ export const PackageSection = () => {
       footerInfo: ["10/14 days processing"]
     },
     { 
-      type: "Qatar Residence + QID", 
+      type: "Qatar Residence + Work", 
       price: 6000000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.30 PM.jpeg",
       details: ["2yr Residence/Work Visa", "Includes Medical + QID"],
@@ -263,29 +290,132 @@ export const PackageSection = () => {
       requirements: ["Datapage", "Passport"],
       footerInfo: ["5-7 Business Days"]
     },
-    { 
-      type: "CHINA Canton Fair 2026", 
-      price: 250000, 
-      image: "/pic/WhatsApp Image 2025-12-18 at 11.49.33 PM.jpeg",
-      details: ["April 2026 Submission", "N400k balance on approval"],
-      requirements: ["Datapage", "Passport photo"],
-      footerInfo: ["30 Days Business Visa"]
-    },
+    // { 
+    //   type: "CHINA Canton Fair 2026", 
+    //   price: 250000, 
+    //   image: "/pic/WhatsApp Image 2025-12-18 at 11.49.33 PM.jpeg",
+    //   details: ["April 2026 Submission", "N400k balance on approval"],
+    //   requirements: ["Datapage", "Passport photo"],
+    //   footerInfo: ["30 Days Business Visa"]
+    // },
     { 
       type: "Work in Europe", 
-      price: "N6,700,000", 
+      price: "N8,000,000", 
       image: "/pic/b29e01bf-401f-4c1b-9b79-c35b824adf5e.jpg",
       details: [
         "Netherlands, Norway, Romania, Italy, Germany, Luxembourg, Ireland",
-        "Step 1: Registration (€500)",
-        "Step 2: Job Offer/Contract (€1000)",
-        "Step 3: Work Permit (€1200)",
-        "Step 4: After Visa Approval (€1000)"
+        "Step 1: Registration ",
+        "Step 2: Job Offer/Contract ",
+        "Step 3: Work Permit",
+        "Step 4: After Visa Approval"
       ],
-      requirements: ["Passport Datapage", "Updated CV", "Academic Certs"],
+      requirements: ["Passport Datapage", "National Identification Number", "Updated CV", "Academic Certs"],
       footerInfo: ["Multi-Stage Processing"]
-    }
+    },
+
+    { 
+      type: "Work in Canada", 
+      price: "N10,000,000", 
+      image: "/pic/canada.jpg",
+      details: [
+        "Netherlands, Norway, Romania, Italy, Germany, Luxembourg, Ireland",
+        "Step 1: Registration ",
+        "Step 2: Job Offer/Contract ",
+        "Step 3: Work Permit",
+        "Step 4: After Visa Approval"
+      ],
+      requirements: ["Passport Datapage", "National Identification Number", "Updated CV", "Academic Certs"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+    
+    {
+      type: "TOURIST / VISIT VISA PACKAGE",
+      
+      price: "N1,500,000",
+      image: "/pic/tourist.png",  
+      details: [
+        "USA, CANADA, EUROPE.",
+        "Visa Type: 6 Months Multiple entry visa.",
+        "Procedure","Support in packaging all needed documentation is provided", "Appointment is booked for submission and date is communicated.", "Meet up with our Rep at submission.", "Pay Visa fee.",
+        "Rate: Administrative/Logistics/Documentation/Profiling/VAT/Professional Fees"
+      ],
+      requirements: ["Hard copy international passport", "2 passport Photos white background", "Letter of Introduction/CAC  ( if available)", "Bank statement (company and/or personal)"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+    { 
+      type: "PROOF OF FUND (POF) SERVICE", 
+      price: "Rate: 3% per month Credited in 12-24hrs", 
+      image: "/pic/profoffunds.jpg",
+      details: [
+        "AVAILABLE FOR TRAVEL, SCHOOL, BUSINESS, ETC",
+        "Available Banks: ZITRA MFB",
+        "GTBANK",
+        "FCMB",
+        "ECOBANK",
+        "FIDELITY",
+        "ACCESS BANK",
+        "GLOBUS BANK",
+        "PARRALLEX",
+        "SUNTRUST "
+      ],
+      requirements: ["Eligible to open account or have existing bank accounts"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+
+    { 
+      type: "Passports Package 1", 
+      price: "N155,000", 
+      image: "/pic/passportpkg.jpg",
+      details: [
+        "5years : 32 pages",
+        "Normal ( duration 1.5 months ) amount: N155,000",
+        
+      ],
+      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+    { 
+      type: "Passports Package 2", 
+      price: "N200,000", 
+      image: "/pic/passportpkg.jpg",
+      details: [
+        "5years : 32 pages",
+        
+        "Fast track (duration 1 week) Amount: N200,000 ",
+      
+      ],
+      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+    { 
+      type: "Passports Package 3", 
+      price: "N280,000", 
+      image: "/pic/passportpkg.jpg",
+      details: [
+        
+        "10 years: 64 pages",
+        "Normal ( duration 1.5 months ) Amount: N280,000",
+        
+      ],
+      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+    { 
+      type: "Passports Package 4", 
+      price: "N310,000", 
+      image: "/pic/passportpkg.jpg",
+      details: [
+        
+        "10 years: 64 pages",
+        
+        "Fast track (duration 1 week) Amount: N310,000"
+      ],
+      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+  
   ];
+
 
   return (
     <section id="packages" className="py-16 md:py-24 bg-slate-50 px-4 md:px-6 overflow-x-hidden">
