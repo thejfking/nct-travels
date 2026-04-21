@@ -171,7 +171,7 @@ export const PackageSection = () => {
       footerInfo: ["Approval in 5-7 Days"]
     },
     { 
-      type: "Oman 2yrs Freelance", 
+      type: "Oman 2 years residence", 
       price: 3500000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.23 PM.jpeg",
       details: ["Visa Only", "Male Only", "ID + Medicals (N280k)"],
@@ -198,6 +198,14 @@ export const PackageSection = () => {
       type: "Spain Residence",
       price: 12950000,
       image: "/pic/spain.webp",
+      details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      requirements: ["Passport", "Police Clearance", "2 Photos"],
+      footerInfo: ["Total: €7,000"]
+    },
+    { 
+      type: "Italy Residence",
+      price: 12950000,
+      image: "/pic/italy.jpg",
       details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
       requirements: ["Passport", "Police Clearance", "2 Photos"],
       footerInfo: ["Total: €7,000"]
@@ -371,7 +379,7 @@ export const PackageSection = () => {
         "Normal ( duration 1.5 months ) amount: N155,000",
         
       ],
-      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      requirements: [""],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -384,7 +392,7 @@ export const PackageSection = () => {
         "Fast track (duration 1 week) Amount: N200,000 ",
       
       ],
-      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      requirements: [""],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -397,7 +405,7 @@ export const PackageSection = () => {
         "Normal ( duration 1.5 months ) Amount: N280,000",
         
       ],
-      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      requirements: [""],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -410,7 +418,7 @@ export const PackageSection = () => {
         
         "Fast track (duration 1 week) Amount: N310,000"
       ],
-      requirements: ["Completed application form", "Birth certificate", "National ID card", "2 passport photos", "Letter of introduction from employer or local government"],
+      requirements: [""],
       footerInfo: ["Multi-Stage Processing"]
     },
   
