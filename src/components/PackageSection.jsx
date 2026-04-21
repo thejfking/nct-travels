@@ -35,6 +35,7 @@ const VisaCard = ({ type, price, details, foot, requirements, footerInfo, image 
     if (name.includes("azerbaijan")) return "az";
     if (name.includes("spain")) return "es";
     if (name.includes("canada")) return "ca";
+    if(name.includes("italy")) return "it";
     if (name.includes("europe") || name.includes("schengen")) return "eu";
     return null;
   };
@@ -379,7 +380,13 @@ export const PackageSection = () => {
         "Normal ( duration 1.5 months ) amount: N155,000",
         
       ],
-      requirements: [""],
+      requirements: [
+        "Passport for 2",
+        "Utility bill",
+        "Capturing",
+        "Scheduled Capturing",
+        "Government recognized ID"
+      ],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -392,7 +399,13 @@ export const PackageSection = () => {
         "Fast track (duration 1 week) Amount: N200,000 ",
       
       ],
-      requirements: [""],
+      requirements: [
+        "Passport for 2",
+        "Utility bill",
+        "Capturing",
+        "Scheduled Capturing",
+        "Government recognized ID"
+      ],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -405,7 +418,13 @@ export const PackageSection = () => {
         "Normal ( duration 1.5 months ) Amount: N280,000",
         
       ],
-      requirements: [""],
+      requirements: [
+        "Passport for 2",
+        "Utility bill",
+        "Capturing",
+        "Scheduled Capturing",
+        "Government recognized ID"
+      ],
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
@@ -418,7 +437,13 @@ export const PackageSection = () => {
         
         "Fast track (duration 1 week) Amount: N310,000"
       ],
-      requirements: [""],
+      requirements: [
+        "Passport for 2",
+        "Utility bill",
+        "Capturing",
+        "Scheduled Capturing",
+        "Government recognized ID"
+      ],
       footerInfo: ["Multi-Stage Processing"]
     },
   
