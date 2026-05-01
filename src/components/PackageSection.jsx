@@ -17,7 +17,7 @@ const cardVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 0.4 } }
 };
 
-const VisaCard = ({ type, price, details, foot, requirements, footerInfo, image }) => {
+const VisaCard = ({ type, price, details, foot, requirements, footerInfo, image, description }) => {
   const businessNumber = "2347082324584";
 
   const getFlagCode = (typeName) => {
@@ -100,6 +100,15 @@ const VisaCard = ({ type, price, details, foot, requirements, footerInfo, image 
       </div>
 
       <div className="p-5 flex flex-col flex-grow">
+        <p className="text-[10px] font-bold text-slate-400 uppercase mb-2 flex items-center gap-1">
+          <AlertCircle size={10} /> Description
+        </p>
+          
+        {description && (
+          <p className="text-[13px] text-slate-600 mb-4 leading-relaxed">
+            {description}
+          </p>
+        )}
         <div className="space-y-2 mb-4">
           {details.map((detail, i) => (
             <p key={i} className="text-[12px] text-slate-700 font-medium flex items-start gap-2 leading-relaxed">
@@ -168,6 +177,7 @@ export const PackageSection = () => {
       price: 1500000, 
       image: "/pic/south.jpeg",
       details: ["90 Days Visa", "90 Days Validity"],
+      description: "Ready for South Africa? Experience World-Class tourism, wildlife and culture.",
       requirements: ["Datapage", "Passport photo", "Yellow Fever card"],
       footerInfo: ["Approval in 5-7 Days"]
     },
@@ -176,6 +186,7 @@ export const PackageSection = () => {
       price: 3500000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.23 PM.jpeg",
       details: ["Visa Only", "Male Only", "ID + Medicals (N280k)"],
+      description:"Step into a life of comfort and opportunity in Oman. With our 2 years reesidence visa package.",
       requirements: ["Datapage", "Passport photo", "OK to Board (N20k)"],
       footerInfo: ["24hrs-7 Days Processing"]
     },
@@ -192,6 +203,7 @@ export const PackageSection = () => {
       price: 12950000,
       image: "/pic/n2.jpeg",
       details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      description:"Move seamlessly to Portugal. Our residence package offers comfort, culture, and opportunity in Europe.",
       requirements: ["Passport", "Police Clearance", "2 Photos"],
       footerInfo: ["Total: €7,000"]
     },
@@ -200,6 +212,7 @@ export const PackageSection = () => {
       price: 12950000,
       image: "/pic/spain.webp",
       details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      description:"Experience the vibrant culture and sunny climate of Spain. Our residence package offers a gateway to European living.",
       requirements: ["Passport", "Police Clearance", "2 Photos"],
       footerInfo: ["Total: €7,000"]
     },
@@ -208,6 +221,7 @@ export const PackageSection = () => {
       price: 12950000,
       image: "/pic/italy.jpg",
       details: ["2 Years Schengen Residence", "Relocate in 12 Weeks", "Travel to 29 Countries", "Public Health & Insurance"],
+      description:"Immerse yourself in the rich culture and stunning landscapes of Italy. Our residence package offers a gateway to European living.",
       requirements: ["Passport", "Police Clearance", "2 Photos"],
       footerInfo: ["Total: €7,000"]
     },
@@ -216,6 +230,7 @@ export const PackageSection = () => {
       price: 450000, 
       image: "/pic/n3.jpeg",
       details: ["90 Days Single Entry", "Covers Uganda, Kenya, Rwanda", "Approval in 7-14 Days"],
+      description:"Apply for an East African e-Visa and explore the diverse cultures and breathtaking landscapes of Uganda, Kenya, and Rwanda.",
       requirements: ["Datapage", "Passport photo", "Entry via Uganda"],
       footerInfo: ["3-Country Coverage"]
     },
@@ -224,6 +239,7 @@ export const PackageSection = () => {
       price: 950000, // UPDATED PRICE
       image: "/pic/qatar.jpeg",
       details: ["VISA ONLY"],
+      description: "Apply for a 30-day e-Visa to Qatar and experience the vibrant culture and modern amenities of this Gulf nation.",
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["Standard Package"]
     },
@@ -232,6 +248,7 @@ export const PackageSection = () => {
       price: 1250000, 
       image: "/pic/qatar.jpeg",
       details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
+      description: "Enjoy a relaxing holiday in Doha with our comprehensive package that includes accommodation and daily breakfast.",
       requirements: ["Datapage", "Passport photo", "2 in a room"],
       footerInfo: ["Full Package"]
     },
@@ -240,6 +257,7 @@ export const PackageSection = () => {
       price: 1500000, 
       image: "/pic/qatar.jpeg",
       details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
+      description: "Enjoy a relaxing holiday in Doha with our comprehensive package that includes accommodation and daily breakfast.",
       requirements: ["Datapage", "Passport photo", "1 in a room"],
       footerInfo: ["Full Package"]
     },
@@ -248,6 +266,7 @@ export const PackageSection = () => {
       price: 1760000, 
       image: "/pic/qatar.jpeg",
       details: ["3 Nights Accommodation", "Daily Buffet Breakfast"],
+      description: "Enjoy a relaxing holiday in Doha with our comprehensive package that includes accommodation and daily breakfast.",
       requirements: ["Datapage", "Passport photo", "1 in a room"],
       footerInfo: ["Full Package"]
     },
@@ -256,6 +275,7 @@ export const PackageSection = () => {
       price: 1680000, 
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.26 PM.jpeg",
       details: ["60days Visa"],
+      description: "Apply for an Indonesia e-Visa and explore the diverse cultures and breathtaking landscapes of this archipelago.",
       requirements: ["Datapage", "Passport photo", "Hotel/Flight Reservation"],
       footerInfo: ["14 - 21 days Approval"]
     },
@@ -264,6 +284,7 @@ export const PackageSection = () => {
       price: 250000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.26 PM (1).jpeg",
       details: ["90 days Visa"],
+      description: "Apply for an Uganda e-Visa and discover the natural beauty and rich culture of this East African nation.",
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["5-7 Business days"]
     },
@@ -272,6 +293,7 @@ export const PackageSection = () => {
       price: 200000, 
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.28 PM.jpeg",
       details: ["90 days Visa"],
+      description: "Apply for a Kenya ETA and experience the diverse cultures and breathtaking landscapes of this East African nation.",
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["96 hours Approval"]
     },
@@ -280,6 +302,7 @@ export const PackageSection = () => {
       price: 430000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.29 PM.jpeg",
       details: ["Standard Processing"],
+      description: "Explore the natural beauty and rich culture of this East African nation.",
       requirements: ["Data page", "Passport photo"],
       footerInfo: ["10/14 days processing"]
     },
@@ -288,6 +311,7 @@ export const PackageSection = () => {
       price: 6000000, // UPDATED PRICE
       image: "/pic/WhatsApp Image 2025-12-18 at 11.49.30 PM.jpeg",
       details: ["2yr Residence/Work Visa", "Includes Medical + QID"],
+      description: "Apply for a 2-year residence/work visa to Qatar and enjoy the benefits of living and working in this dynamic Gulf nation.",
       requirements: ["Datapage", "Passport photo"],
       footerInfo: ["30-45 days Approval"]
     },
@@ -327,12 +351,12 @@ export const PackageSection = () => {
       price: "N10,000,000", 
       image: "/pic/canada.jpg",
       details: [
-        "Netherlands, Norway, Romania, Italy, Germany, Luxembourg, Ireland",
         "Step 1: Registration ",
         "Step 2: Job Offer/Contract ",
         "Step 3: Work Permit",
         "Step 4: After Visa Approval"
       ],
+      description:"Unlock your future in Canada with a work permit that open doors to global career opportunities",
       requirements: ["Passport Datapage", "National Identification Number", "Updated CV", "Academic Certs"],
       footerInfo: ["Multi-Stage Processing"]
     },
@@ -392,7 +416,7 @@ export const PackageSection = () => {
     { 
       type: "Passports Package 2", 
       price: "N200,000", 
-      image: "/pic/passportpkg.jpg",
+      image: "/pic/nigpass.png",
       details: [
         "5years : 32 pages",
         
@@ -430,7 +454,7 @@ export const PackageSection = () => {
     { 
       type: "Passports Package 4", 
       price: "N310,000", 
-      image: "/pic/passportpkg.jpg",
+      image: "/pic/nigpass.png",
       details: [
         
         "10 years: 64 pages",
@@ -446,6 +470,28 @@ export const PackageSection = () => {
       ],
       footerInfo: ["Multi-Stage Processing"]
     },
+
+    { 
+      type: "Passports Package 4", 
+      price: "N31033333333000", 
+      image: "/pic/nigpass.png",
+      details: [
+        
+        "10 years: 64 pages",
+        
+        "Checker (duration 1 week) Amount: N310,000"
+      ],
+      description:"Hello World",
+      requirements: [
+        "Passport for 2",
+        "Utility bill",
+        "Capturing",
+        "Scheduled Capturing",
+        "Government recognized ID"
+      ],
+      footerInfo: ["Multi-Stage Processing"]
+    },
+
   
   ];
 
