@@ -396,9 +396,9 @@ export const PackageSection = () => {
     },
 
     { 
-      type: "Passports Package 1", 
+      type: "Nigeria Passports Package 1", 
       price: "N155,000", 
-      image: "/pic/passportpkg.jpg",
+      image: "/pic/nigpass.png",
       details: [
         "5years : 32 pages",
         "Normal ( duration 1.5 months ) amount: N155,000",
@@ -414,7 +414,7 @@ export const PackageSection = () => {
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
-      type: "Passports Package 2", 
+      type: "Nigeria Passports Package 2", 
       price: "N200,000", 
       image: "/pic/nigpass.png",
       details: [
@@ -433,9 +433,9 @@ export const PackageSection = () => {
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
-      type: "Passports Package 3", 
+      type: "Nigeria Passports Package 3", 
       price: "N280,000", 
-      image: "/pic/passportpkg.jpg",
+      image: "/pic/nigpass.png",
       details: [
         
         "10 years: 64 pages",
@@ -452,7 +452,7 @@ export const PackageSection = () => {
       footerInfo: ["Multi-Stage Processing"]
     },
     { 
-      type: "Passports Package 4", 
+      type: "Nigeria Passports Package 4", 
       price: "N310,000", 
       image: "/pic/nigpass.png",
       details: [
@@ -461,27 +461,6 @@ export const PackageSection = () => {
         
         "Fast track (duration 1 week) Amount: N310,000"
       ],
-      requirements: [
-        "Passport for 2",
-        "Utility bill",
-        "Capturing",
-        "Scheduled Capturing",
-        "Government recognized ID"
-      ],
-      footerInfo: ["Multi-Stage Processing"]
-    },
-
-    { 
-      type: "Passports Package 4", 
-      price: "N31033333333000", 
-      image: "/pic/nigpass.png",
-      details: [
-        
-        "10 years: 64 pages",
-        
-        "Checker (duration 1 week) Amount: N310,000"
-      ],
-      description:"Hello World",
       requirements: [
         "Passport for 2",
         "Utility bill",
