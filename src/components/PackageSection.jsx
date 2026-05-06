@@ -234,6 +234,27 @@ export const PackageSection = () => {
       requirements: ["Datapage", "Passport photo", "Entry via Uganda"],
       footerInfo: ["3-Country Coverage"]
     },
+
+     { 
+      type: "SUMMER IN QATAR", 
+      price: 950000, // UPDATED PRICE
+      image: "/pic/qata.jpeg",
+      details: ["Qatar Visa",
+        "Flight on Qatar Airways",
+        "5 Star Hotel Accommodation",
+        "Airport Pick Up/Drop Off",
+        "Daily Buffet Breakfast",
+        "5 hrs Doha City Tour",
+        "Desert Safari + Camel Riding",
+        "Visit to the National Museum",
+        "Gondola Ride @ Villagio Mall",
+        "Night Club Access"],
+      description: "Apply for a 30-day e-Visa to Qatar and experience the vibrant culture and modern amenities of this Gulf nation.\n\n 2 in a Room N3.8million/Person | Single Passenger N4.050millon",
+      requirements: ["Datapage", "Passport photo"],
+      footerInfo: ["Standard Package"]
+    },
+
+    
     { 
       type: "Qatar 30days E-Visa", 
       price: 950000, // UPDATED PRICE
