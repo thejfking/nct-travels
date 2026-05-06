@@ -238,7 +238,7 @@ export const PackageSection = () => {
      { 
       type: "SUMMER IN QATAR", 
       price: 4050000, // UPDATED PRICE
-      image: "/pic/qata.jpeg",
+      image: "/pic/qata1.jpeg",
       details: ["Qatar Visa",
         "Flight on Qatar Airways",
         "5 Star Hotel Accommodation",
